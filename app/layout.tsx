@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             </ul>
           </nav>
           {children}
+          <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
         </QueryClientProvider>
       </body>
     </html>
