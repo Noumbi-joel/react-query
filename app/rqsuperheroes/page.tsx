@@ -16,7 +16,10 @@ const fetchSuperHeroes = () => {
 export default function RQSuperHeroes() {
   const { data, isLoading, isError, error } = useQuery(
     "super-heroes",
-    fetchSuperHeroes
+    fetchSuperHeroes,
+    {
+      cacheTime: 5000
+    }
   );
   let errors: any = error;
 
